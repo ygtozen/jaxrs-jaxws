@@ -46,3 +46,90 @@ public class Notes {
 //http://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm
 
 //Representation State Transfer anlamina gelmektedir.
+
+/*
+ * RESTFul Architecture principles
+ * 
+ * ## Addresablity
+ * Addressablility/Addressable resource (Adreslenebilir olmasý) --> Her kaynaðýn tekil uniq bir adresi olmasý gerek.
+ * Kaynakalara eriþim unique/tekil bir identifier ile ulaþýlabilir olmalýdýr
+ * Her bir kaynak , URI(uniform resource idetifier) ile adreslebilir olmalýdýr.
+ * 
+ * */
+
+/*
+ * scheme://host:port/path?queryString#fragment
+ * scheme --> Kullanýlan protokol (http, https, ftp)
+ * host --> dns adi yada ip adres olbilir
+ * port --> opsiyonel
+ * path ve queryString --> http://example.com/customers?lastName=Erguder&zipcode=34000
+ * 
+ * */
+
+//Addressability is the idea that every object and resource in your system 
+//is reachable through a unique identifier. (Tekil bir id ile sistemde yer alan bütün resource'ler ulaþýlabilir olmalý)
+//each resource must be addressable via a URI (Uniform Resource Identifier).
+
+/*
+ * ### Representation Oriented ()
+ * representation --> XML, JSON gibi formatlar ile exchange(deðiþtirme) ediyoruz.
+ * */
+
+// HTTP GET isteðinde bulunduðumuzda, ilgili kaynaðýn mevcut durumunu alýrýz.
+
+// ## The Uniform , Constrained Interface
+// This means that you don’t have an “action” parameter in your URI and use only 
+// the methods of HTTP for your web services. 
+
+// uri bilgisinde bir actrion paremetresi gonderip , bu parametreye gore akis kontrolu YAPMA!
+
+// GET 
+// serverdan bir kaynak/resource isteðinde bulunduðumuzda GET'i kullanýrýz.
+
+// idempotet --> 
+// bir islem/istek/operation yaptigimizda , bunu kacdefa yaptigimizn bir onermi yoktur.
+// sonuc her zaman aynidir.
+// GET dogasi geregi idempotent ozellik gosterir;
+
+//public int getNumber() {
+//return 100;
+//}
+
+//POST
+//non-idempotent ozellige sahiptir.
+//islemi kac defa uyguladigimiz onemlidir, her defasinda sonuc degisecektir.
+
+//private int number =10;
+//public int getNumber() {
+//	return ++number;
+//}
+
+//create resource , post icin uygun olacaktir.
+
+//PUT
+//put update/guncelleme amaciyla tercih edilir.
+//put da , get gibi idempotent ozellige sahiptir!    
+//bir dosyayi kaydetmeyi dusunelim ;
+//1 kez kaydettigimizde (update) olur. sonrasindaki kaydetme islemleri(degisiklik yapmadan) bir sey ifade etmez.
+//put un mantigida bu sekilde calismalidir. bu nedenle idempotent ozellik gosterir.
+
+//POST means “create new” as in “Here is the input for creating a user, create it for me”.
+//PUT means “insert, replace if already exists” as in “Here is the data for user 5”.
+
+
+//DELETE
+//remove/delete resource
+//idempotent ozellik gosterir.
+
+
+
+
+
+
+
+
+
+
+
+
+
